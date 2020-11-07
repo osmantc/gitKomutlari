@@ -31,7 +31,7 @@ git rm deneme.txt --> klasörden siler, stageyi düzenler, commit için bekler. rec
 
 git mv deneme.txt deneme2.txt  gibi.
 
-**ÖNEMLÝ-A. bir dosyada hata yaptýk kaydettik, o dosyayý son committen geri çekmek istiyoruz.(tüm commitide geri alabilirdik ama daha az maliyetli)
+**ÖNEMLÝ-A. bir dosyada hata yaptýk kaydettik, o dosyayý stageden geri çekmek istiyoruz.(tüm commitide geri alabilirdik ama daha az maliyetli)
 git checkout -- deneme.txt
 
 **ÖNEMLÝ-B. bir dosyada hata yaptýk, gittik bide bunu stageye kaydettik. geri almak istiyoruz. öncelikle stageyi geri almalýyýz, sonra mevcutu(yani A adýmý)
@@ -40,6 +40,8 @@ git checkout -- deneme.txt --> mevcut dizindeki halinide düzelttik.
 
 **ÖNEMLÝ-C-COMMITI CEKME- git log ile commitlerimize bakýyoruz, oradan commit nosunu alýp..
 git checkout commitNO -- .  --> . folder içindeki herþeyi getir demek, tek bir dosyayý geri almak istiyorsak . yerine o dosyanýn adýný yazabiliriz.
+
+veya git restore --source=HEAD~1 .   -->  yanlýþ commit yaptýysak, bir önceki commiti komple getirmek istiyorsak(HEAD en son commit demek, HEAD~1 en sondan bir önceki commit)
 
 ************************GIT-----GITHUB BAGLANTISI************************
 
