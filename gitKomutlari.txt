@@ -47,5 +47,7 @@ git checkout commitNO -- .  --> . folder içindeki herþeyi getir demek, tek bir d
 
 git remote add baglantiTakmaAdi httpAdress  --> þeklinde baglantiTakmadi baðlantimizi oluþturuyoruz.
 git push -u baglantýTakmaAdi master --> ile pushluyoruz. -u tüm dosyalar demek, master branch adi.
+git pull -->remote aracýlýðýyla son halini foldera geri çekiyoruz
 
 git remote -->ile mevcut uzakbaðlantýlarý görüntülüyoruz.
+
