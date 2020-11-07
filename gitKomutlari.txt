@@ -1,0 +1,51 @@
+**yükledikten sonra user ayarlama
+
+git config --global user.name "tarik"
+git config --global user.email "deneme@hotmail.com"
+
+**istenilen klasöre git eklemek-kurmak (.git dosyasý oluþturmak) için
+
+git init
+
+**deiðþiklikleri git'e eklemek için 
+
+git add .    -->> bu komut git temp bölgesine (Stage bölgesi) ekler, . mevcut dizin demektir, yani mevcut dizindekileri geçiçi bölgeye ekle
+git commit -m "ilk commit"  -->> versiyonlar ve commitler,
+
+git log  -->> ile tüm commitleri görebiliriz
+
+git status  -->> ile yapýlmýþ ve stage ye eklenmiþ deðiþiklik var mý, stagede olup commite hazýr var mý, veya deðiþen birþey yok
+gibi git'in mevcut durumu hakkýnda bilgi alabiliyoruz.
+
+**yapýlan deðiþiklikleri görmek için diff komutu
+
+git diff   --> mevcut klasör ile arabölge arasýndaki tüm farklýlýklarý gösterir.
+git diff deneme.txt --> mevcut deneme.txt ile arabölgeki deneme.txt arasýndaki farklýlýklarý gösterir.
+git diff --staged --> stage bölgesi ile commit bölgesi arasý farký gösterir.
+
+**silme iþlemleri ayný linux gibi (not silme yerine add'de yapsak ayný mantýk.)
+
+git rm deneme.txt --> klasörden siler, stageyi düzenler, commit için bekler. recursive silme ihtiyacý varsa (git rm -r folder) þeklinde
+
+**taþýma ve yeniden adlandýrma iþleri ayný linuxteki gibi. mv komutu ile , baþýna sadece git ekliyoruz.
+
+git mv deneme.txt deneme2.txt  gibi.
+
+**ÖNEMLÝ-A. bir dosyada hata yaptýk kaydettik, o dosyayý son committen geri çekmek istiyoruz.(tüm commitide geri alabilirdik ama daha az maliyetli)
+git checkout -- deneme.txt
+
+**ÖNEMLÝ-B. bir dosyada hata yaptýk, gittik bide bunu stageye kaydettik. geri almak istiyoruz. öncelikle stageyi geri almalýyýz, sonra mevcutu(yani A adýmý)
+git reset HEAD deneme.txt  --> deneme dosyasýnýn son commitdeki halini stageye aldýk, stageyi düzelttik
+git checkout -- deneme.txt --> mevcut dizindeki halinide düzelttik.
+
+**ÖNEMLÝ-C-COMMITI CEKME- git log ile commitlerimize bakýyoruz, oradan commit nosunu alýp..
+git checkout commitNO -- .  --> . folder içindeki herþeyi getir demek, tek bir dosyayý geri almak istiyorsak . yerine o dosyanýn adýný yazabiliriz.
+
+************************GIT-----GITHUB BAGLANTISI************************
+
+**repositorymizin Http adresini github üzerinden alýyoruz. bash'ten çalýþýlan folder'a gelip baglantýyý kurmak için gerekli komutu yazýyoruz
+
+git remote add baglantiTakmaAdi httpAdress  --> þeklinde baglantiTakmadi baðlantimizi oluþturuyoruz.
+git push -u baglantýTakmaAdi master --> ile pushluyoruz. -u tüm dosyalar demek, master branch adi.
+
+git remote -->ile mevcut uzakbaðlantýlarý görüntülüyoruz.
