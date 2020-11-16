@@ -1,0 +1,31 @@
+ENTITYFRAMEWORK VISUAL STUDIO BAÐLANTISI ÝÇÝN....--->>>>>>><
+
+devenv.exe.config file içerisinde yapýlacaklar (vs2017 ve vs2019 için farklý)
+
+
+ASSEMBLY BINDING içerisine--->
+
+ 		<dependentAssembly>
+			<assemblyIdentity name="Oracle.ManagedDataAccess" publicKeyToken="89b483f429c47342" culture="neutral" />
+			<codeBase version="4.122.18.3" href="E:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\m3m25bey.i3v\Assemblies\DataProviders\Oracle.ManagedDataAccess.dll" />
+			</dependentAssembly>
+		<dependentAssembly>
+			<assemblyIdentity name="Oracle.ManagedDataAccess.EntityFramework" publicKeyToken="89b483f429c47342" culture="neutral" />
+			<codeBase version="6.122.18.3" href="E:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\m3m25bey.i3v\Assemblies\DataProviders\Oracle.ManagedDataAccess.EntityFramework.dll" />
+		</dependentAssembly> 
+
+
+DBPROVIDERFACTORIES içerisne --->>
+
+ 		<remove invariant="Oracle.ManagedDataAccess.Client" />
+		<add name="ODP.NET, Managed Driver" invariant="Oracle.ManagedDataAccess.Client" description="Oracle Data Provider for .NET, Managed Driver" type="Oracle.ManagedDataAccess.Client.OracleClientFactory, 		Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342" /> 
+
+
+kodlarý eklenmelidir.
+
+******VS2017'de Version=4.122.18.3 iken VS2019'da Version=4.122.19.1 olarak ayarlanmalýdýr. (Çünkü iki adet ODTforVisual studio yüklü, vs2017 ODAC18 kullandýðýndan 18.3 sürümü olmalý.... vs2019 ODAC19 kullandýðýndan 19.1 sürümü olmalý)
+
+****** href=" " kýsmýda visual studionun olduðu yere göre düzenlenmel....
+
+****** Visual studiolarda Nuget üzerinden doðru oraclemanaged ve oraclemanaged.entity sürümleri yüklenmelidir. (Vs19 için 19'lu sürümler, Vs17 için 17'li sürümler) 
+ 
